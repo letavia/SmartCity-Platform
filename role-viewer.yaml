@@ -1,0 +1,18 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: viewer-role
+rules:
+- apiGroups: ["extensions", "apps","kubernetes.io","horizontalpodautoscalers","networkpolicies.networking.k8s.io"]
+  resources: ["*"]
+  verbs: ["list"]
+- apiGroups: [""]
+  resources: ["persistentvolumeclaims","configmaps","pods","pods/portforward","replicationcontrollers","secrets","services"]
+  verbs: ["list"]
+- apiGroups: [""]
+  resources: ["resourcequotas"]
+  verbs: ["list"]  
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["*"]
+  verbs: ["list"]
+

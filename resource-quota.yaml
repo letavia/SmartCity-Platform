@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: object-quota
+spec:
+  hard:
+    pods: "50"
+    configmaps: "30"
+    persistentvolumeclaims: "30"
+    secrets: "20"
+    services: "50"
+    services.loadbalancers: "10"
+

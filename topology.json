@@ -1,0 +1,56 @@
+{
+  "clusters": [
+    {
+      "nodes": [
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "gke-kubecity-kube-pool-be02f16f-7lq5"
+              ],
+              "storage": [
+                "10.128.0.54"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/sdb"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "gke-kubecity-kube-pool-be02f16f-ql2d"
+              ],
+              "storage": [
+                "10.128.0.53"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/sdb"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "gke-kubecity-kube-pool-be02f16f-sr6f"
+              ],
+              "storage": [
+                "10.128.0.55"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/sdb"
+          ]
+        }
+      ]
+    }
+  ]
+}

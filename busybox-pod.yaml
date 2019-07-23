@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-sleep
+  labels: 
+     app: busybox
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+     metadata:
+       labels:
+         app: busybox
+     spec:    
+       containers:
+       - name: busybox
+         image: busybox
+         command:
+          - sh
+          - -c
+          - |
+             echo "HOLA WORLD"
+             sleep 2000
+         volumeMounts:
+         - name: pre-install
+           mountPath: /usr
+         - name: storage
+           mountPath: /tmp        
+       volumes:
+       - name: pre-install
+         emptyDir: {}
+       - name: storage
+         persistentVolumeClaim: 
+           claimName: test-pvc
+        

@@ -1,0 +1,22 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: admin-role
+rules:
+- apiGroups: ["extensions", "apps","kubernetes.io","horizontalpodautoscalers","networkpolicies.networking.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: [""]
+  resources: ["persistentvolumeclaims","configmaps","pods","pods/portforward","pods/exec","replicationcontrollers","secrets","serviceaccounts","services"]
+  verbs: ["*"]
+- apiGroups: [""]
+  resources: ["resourcequotas","namespaces"]
+  verbs: ["list","get"]  
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources:
+  - jobs
+  - cronjobs
+  verbs: ["*"]
