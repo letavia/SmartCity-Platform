@@ -1,0 +1,13 @@
+apiVersion: storage.k8s.io/v1beta1
+kind: StorageClass
+metadata:
+  name: glusterfs-sc
+  annotations: 
+     storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "http://34.68.113.167:8080" #External IP of Heketi LoadBalancer 
+  restuser: "admin"
+  restuserkey: "admin"
+allowVolumeExpansion: true
+reclaimPolicy: Retain
